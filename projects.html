@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lalitha Sri | Projects</title>
+  <style>
+    body {
+      margin: 0; font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #43cea2, #185a9d);
+      color: #fff;
+    }
+    nav {
+      background: rgba(0,0,0,0.3);
+      padding: 1rem; text-align: center;
+    }
+    nav a {
+      color: #fff; text-decoration: none; margin: 0 1rem; font-weight: bold;
+    }
+    nav a:hover { text-decoration: underline; }
+    h1 { text-align: center; margin-top: 2rem; }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 1rem;
+    }
+    .projects, .clothes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    .card {
+      background: rgba(255,255,255,0.2);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    #noteInput {
+      width: 80%; padding: 0.5rem;
+      border-radius: 5px; border: none;
+      margin-right: 0.5rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background: #00c6ff;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover { background: #007acc; }
+    #notesList {
+      margin-top: 1rem;
+    }
+    .note {
+      background: rgba(255,255,255,0.3);
+      padding: 0.5rem;
+      border-radius: 5px;
+      margin: 0.3rem 0;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index1.html">Home</a>
+    <a href="home1.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact23.html">Contact</a>
+  </nav>
+
+  <h1>My Projects</h1>
+
+  <section>
+    <h2>Note Maker</h2>
+    <input type="text" id="noteInput" placeholder="Write your note...">
+    <button onclick="addNote()">Add Note</button>
+    <div id="notesList"></div>
+  </section>
+
+  <section>
+    <h2>Clothing Display</h2>
+    <div class="clothes">
+      <div class="card">
+        <img src="https://outoforder.in/wp-content/uploads/2021/02/Mens-Hot-Pink-T-shirt-01.jpg" alt="T-Shirt">
+        <p>Cool T-Shirt</p>
+      </div>
+      <div class="card">
+        <img src="https://www.pngall.com/wp-content/uploads/4/Leather-Jacket-PNG.png" alt="Jacket">
+        <p>Warm Jacket</p>
+      </div>
+      <div class="card">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.mQD5mAAqdaAVfHitRShtugHaGh?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Jeans">
+        <p>Blue Jeans</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function addNote() {
+      const input = document.getElementById("noteInput");
+      const noteText = input.value.trim();
+      if (noteText !== "") {
+        const noteDiv = document.createElement("div");
+        noteDiv.className = "note";
+        noteDiv.innerText = noteText;
+        document.getElementById("notesList").appendChild(noteDiv);
+        input.value = "";
+      }
+    }
+  </script>
+</body>
+</html>
